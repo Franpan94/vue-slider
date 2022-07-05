@@ -53,7 +53,19 @@ const app = new Vue ({
             if(this.i === -1){
                 this.i = this.slides.length -1;
             }
+        },
+
+        isActive: function(position){
+            if(this.i === position){
+                return 'active';
+            } 
+            
+        },
+
+        isActiveimg: function(number){
+            this.i = number;
         }
+
     }
     
 })
