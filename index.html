@@ -29,23 +29,11 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevslide"></div>
                     <div class="next" @click="nextslide"></div>
-                    <div class="thumb" :class="isActive(0)">
-                        <img src="img/01.jpg" alt="Svezia" @click="isActiveimg(0)"/>
-                    </div>
-                    <div class="thumb" :class="isActive(1)">
-                        <img src="img/02.jpg" alt="Svizzera" @click="isActiveimg(1)"/>
-                    </div>
-                    <div class="thumb" :class="isActive(2)">
-                        <img src="img/03.jpg" alt="Gran Bretagna" @click="isActiveimg(2)"/>
-                    </div>
-                    <div class="thumb" :class="isActive(3)">
-                        <img src="img/04.jpg" alt="Germania" @click="isActiveimg(3)"/>
-                    </div>
-                    <div class="thumb" :class="isActive(4)">
-                        <img src="img/05.jpg" alt="Paradise" @click="isActiveimg(4)"/>
+                    <div v-for="(slide,i) in slides" class="thumb" :class="isActive(i)">
+                        <img :src="slide.image" :alt="slide.title" @click="isActiveimg(i)"/>
                     </div>
                 </div>
-
+                
             </div>
         </div>
 
